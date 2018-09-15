@@ -5,14 +5,14 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var http = require('http'),
   https = require('https');
-var steem = require('@steemit/steem-js');
+var dpay = require('dpayjs');
 http.globalAgent.maxSockets = Infinity;
 https.globalAgent.maxSockets = Infinity;
 
 var app = express();
 
-if (process.env.STEEMJS_URL) {
-  steem.api.setOptions({ url: process.env.STEEMJS_URL });
+if (process.env.DPAYJS_URL) {
+  dpay.api.setOptions({ url: process.env.DPAYJS_URL });
 }
 
 app.use(logger('dev'));

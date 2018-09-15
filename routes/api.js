@@ -1,20 +1,20 @@
 const express = require('express');
 const decamelize = require('decamelize');
 const _ = require('lodash');
-const steem = require('@steemit/steem-js');
-const methodsMap = require('@steemit/steem-js/lib/api/methods.js');
+const dpay = require('dpayjs');
+const methodsMap = require('dpayjs/lib/api/methods.js');
 
 const methods = methodsMap.default;
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.redirect('https://v2.steemconnect.com/docs/steemjs');
+  res.redirect('https://library.dpays.io/docs/dpayjs');
 });
 
 router.post('/rpc', (req, res) => {
   const { method, params, id } = req.body;
   const mapping = _.filter(methods, { method: method });
-  steem.api.send(mapping[0].api, {
+  dpay.api.send(mapping[0].api, {
     method: method,
     params: params,
   }, (err, result) => {
@@ -38,7 +38,7 @@ router.get('/:method', (req, res) => {
       params.push(queryParam);
     });
   }
-  steem.api.send(mapping[0].api, {
+  dpay.api.send(mapping[0].api, {
     method: method,
     params: params
   }, (err, result) => {

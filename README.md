@@ -1,15 +1,15 @@
-# Steem REST API
+# dPay REST API
 
-## Usage: 
+## Usage:
 
-You can use Steem blockchain API methods this way:
+You can use dPay blockchain API methods this way:
 
-https://api.steemjs.com/getAccounts?names[]=ned  
-https://api.steemjs.com/getState?path=/trending  
-https://api.steemjs.com/getDiscussionsByHot?query={"tag":"photography","limit":"10"}  
+https://rest.dpays.io/getAccounts?names[]=dsiteapi  
+https://rest.dpays.io/getState?path=/trending  
+https://rest.dpays.io/getDiscussionsByHot?query={"tag":"photography","limit":"10"}  
 
-## Steem API UI 
+## dPay API UI
 
-Test Steem REST API on Steem API UI created by @good-karma here: 
+Test dPay REST API on dPay API UI created by @dpays here:
 
-https://esteemapp.github.io/steemapi/
+[https://dpayapi.com]
